@@ -64,17 +64,17 @@ def tempopen():
             temp = float(e2_vl.get())
             so = op.get()
             if so == "F":
-                cov1 = (temp - 32) * 5/9 + 273.15  # Fahrenheit to Kelvin
-                cov2 = (temp - 32) * 5/9           # Fahrenheit to Celsius
-                cov3 = temp                         # Fahrenheit
+                cov1 = temp                         # Fahrenheit
+                cov2 =(temp - 32) * 5/9 + 273.15  # Fahrenheit to Kelvin
+                cov3 =  (temp - 32) * 5/9           # Fahrenheit to Celsius
             elif so == "K":
-                cov1 = temp                         # Kelvin
-                cov2 = temp - 273.15                # Kelvin to Celsius
-                cov3 = (temp - 273.15) * 9/5 + 32   # Kelvin to Fahrenheit
+                cov1 = (temp - 273.15) * 9/5 + 32   # Kelvin to Fahrenheit
+                cov2 = temp                         # Kelvin
+                cov3 = temp - 273.15                # Kelvin to Celsius
             elif so == "C":
-                cov1 = temp + 273.15                # Celsius to Kelvin
-                cov2 = temp                         # Celsius
-                cov3 = temp * 9/5 + 32              # Celsius to Fahrenheit
+                cov1 = temp * 9/5 + 32              # Celsius to Fahrenheit
+                cov2 = temp + 273.15                # Celsius to Kelvin
+                cov3 = temp                         # Celsius
 
             t1.delete("1.0", END)
             t1.insert(END, cov1)
